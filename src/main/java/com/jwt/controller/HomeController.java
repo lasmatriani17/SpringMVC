@@ -1,18 +1,19 @@
-package com.jwt.controller;
+package org.latihan.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
-@RequestMapping("")
+import java.io.IOException;
+
+
 @Controller
 public class HomeController {
-    @RequestMapping(method = RequestMethod.GET)
-    public String home(Model model){
-        model.addAttribute("message", "Welcome!!");
-        return "home";
+    @RequestMapping(value = "/")
+    public ModelAndView listEmployee(ModelAndView model)throws IOException {
+        model.setViewName("home");
+        return model;
     }
-
 }
-
